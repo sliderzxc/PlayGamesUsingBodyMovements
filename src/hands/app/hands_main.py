@@ -1,10 +1,10 @@
 from cvzone.HandTrackingModule import HandDetector
-from src.domain.ManageHandSwipes import ManageHandSwipes
+from src.hands.domain.manage_hand_movements import ManageHandSwipes
 import cv2
 
 cap = cv2.VideoCapture(0)
 hand_detector = HandDetector(maxHands=1)
-manage_handle_swipes = ManageHandSwipes()
+manage_hand_movements = ManageHandSwipes()
 value = 0
 coordinates = [0, 0, 0, 0]
 
@@ -16,7 +16,7 @@ while True:
         if value == 5:
             hand = hands[0]
             new_coordinates = hand["bbox"]
-            coordinates = manage_handle_swipes.handle(coordinates, new_coordinates)
+            coordinates = manage_hand_movements.handle(coordinates, new_coordinates)
             value = 0
         else:
             value += 1
