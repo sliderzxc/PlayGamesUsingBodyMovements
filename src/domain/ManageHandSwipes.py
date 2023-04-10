@@ -2,7 +2,7 @@ import pyautogui
 
 
 class ManageHandSwipes:
-    valueHorizontal = 30
+    valueHorizontal = 40
     valueVertical = 30
 
     def handle(self, coordinates, new_coordinates):
